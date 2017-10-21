@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <form method="POST" action="save">
+    <form method="POST" action="{{action("CategoriaController@save")}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
         <div class="form-group">
             <label for="nombre_categoria">Categoriadd:</label>

@@ -92,12 +92,19 @@
             </li>
             <li class=" nav-item active"><a href="#"><i class="ft-monitor"></i><span data-i18n="" class="menu-title">Inicio</span></a>
             </li>
-            <li class=" nav-item"><a href="categoria"><i class="ft-user"></i><span data-i18n="" class="menu-title">Categorias</span></a>
+            <li class=" nav-item"><a href="#"><i class="ft-user"></i><span data-i18n="" class="menu-title">Categorias</span></a>
                 <ul class="menu-content">
-                    <li><a href="{{action('CategoriaController@index')}}" class="menu-item">Lista de Categorias</a>
-                    </li>
+                    <li><a href="{{action('CategoriaController@index')}}" class="menu-item">Lista de Categorias</a></li>
+                    <li><a href="{{action('CategoriaController@create')}}" class="menu-item">Nueva Categoría</a></li>
                 </ul>
             </li>
+
+            <li class=" nav-item"><a href="#"><i class="ft-user"></i><span data-i18n="" class="menu-title">Subcategorias</span></a>
+                <ul class="menu-content">
+                    <li><a href="{{action('SubCategoriaController@create')}}" class="menu-item">Nueva Subcategoría</a></li>
+                </ul>
+            </li>
+
         </ul>
     </div>
 </div>
