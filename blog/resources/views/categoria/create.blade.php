@@ -4,7 +4,7 @@
     <form method="POST" action="{{action("CategoriaController@save")}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
         <div class="form-group">
-            <label for="nombre_categoria">Categoriadd:</label>
+            <label for="nombre_categoria">Categoriaoo:</label>
             <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria">
         </div>
 
