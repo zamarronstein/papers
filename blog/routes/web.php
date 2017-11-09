@@ -22,3 +22,6 @@ Route::post('categoria/{id}/actualizar', 'CategoriaController@actualizar');
 
 Route::resource('subcategoria', 'SubCategoriaController');
 Route::post('subcategoria/save', 'SubCategoriaController@save');
+
+Route::resource('dashboard', 'DashboardController');
+Route::post('dashboard/save', 'DashboardController@save');
