@@ -16,9 +16,7 @@ class DashboardController extends Controller
    
 
     {
-        $categorias = \App\Dashboard::all();
-
-        return view("dashboard.index", compact('dashboard'));
+      
     }
     /**
      * Show the form for creating a new resource.
