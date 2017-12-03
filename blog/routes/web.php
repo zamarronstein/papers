@@ -29,3 +29,6 @@ Route::post('dashboard/save', 'DashboardController@save');
 
 Route::resource('usuario', 'UsuarioController');
 Route::post('usuario/save', 'UsuarioController@save');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

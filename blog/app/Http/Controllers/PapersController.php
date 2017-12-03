@@ -8,13 +8,23 @@ use Illuminate\Http\Request;
 class PapersController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-          $papers = \App\Papers::all();
+        $papers = \App\Papers::where('creado_por_id', \Auth::user()->id)->get();
 
         return view("papers.index", compact('papers'));
     }
@@ -53,10 +63,14 @@ class PapersController extends Controller
 
         try{
 
-            \App\Papers::create([
+            $paper = new \App\Papers([
                 "titulo" => $request['titulo'],
-                
+                "link_investigacion" => $request['link_investigacion']
             ]);
+
+            $paper->creado_por_id = \Auth::user()->id;
+
+            $paper->save();
 
             $a_result["msg"] = "Categoria guardada";
             $a_result["error"] = false;
@@ -65,7 +79,7 @@ class PapersController extends Controller
         }
 
         // return json_encode($a_result);
-        return redirect("/papers");
+        return redirect("/dashboard");
     }
 
     /**
