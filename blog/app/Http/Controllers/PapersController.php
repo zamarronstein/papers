@@ -14,6 +14,9 @@ class PapersController extends Controller
      */
     public function index()
     {
+          $papers = \App\Papers::all();
+
+        return view("papers.index", compact('papers'));
     }
 
     /**
@@ -43,6 +46,35 @@ class PapersController extends Controller
      * @param  \App\Papers  $papers
      * @return \Illuminate\Http\Response
      */
+
+    public function save(Request $request) {
+
+        $a_result = ["error" => true, "msg" => "Categoria NO Guardada"];
+
+        try{
+
+            \App\Papers::create([
+                "titulo" => $request['titulo'],
+                
+            ]);
+
+            $a_result["msg"] = "Categoria guardada";
+            $a_result["error"] = false;
+        } catch (Exception $e) {
+            
+        }
+
+        // return json_encode($a_result);
+        return redirect("/papers");
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Categoria  $categoria
+     * @return \Illuminate\Http\Response
+     */
+
     public function show(Papers $papers)
     {
         //
@@ -80,5 +112,13 @@ class PapersController extends Controller
     public function destroy(Papers $papers)
     {
         //
+    }
+
+    public function actualizar (Request $request) {
+        $papers = Categoria::find($request["id"]);
+        $papers->titulo = $request["titulo"];
+        $papers->save();
+
+        return redirect("/papers");
     }
 }

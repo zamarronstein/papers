@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('papers', 'PapersController');
+Route::post('papers/save', 'PapersController@save');
 Route::resource('categoria', 'CategoriaController');
 Route::post('categoria/save', 'CategoriaController@save');
 Route::post('categoria/{id}/actualizar', 'CategoriaController@actualizar');
@@ -25,3 +26,6 @@ Route::post('subcategoria/save', 'SubCategoriaController@save');
 
 Route::resource('dashboard', 'DashboardController');
 Route::post('dashboard/save', 'DashboardController@save');
+
+Route::resource('usuario', 'UsuarioController');
+Route::post('usuario/save', 'UsuarioController@save');

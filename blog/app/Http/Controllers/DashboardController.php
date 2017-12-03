@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dashboard;
+use App\Papers;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -16,10 +17,14 @@ class DashboardController extends Controller
    
 
     {
-        $dashboard = \App\Dashboard::all();
+    //    $dashboard = \App\Dashboard::all();
 
-        return view("dashboard.index", compact('dashboard'));
+     //   return view("dashboard.index", compact('dashboard'));
+    	  $papers = \App\Papers::all();
+
+        return view("dashboard.index", compact('papers'));
     }
+
     /**
      * Show the form for creating a new resource.
      *

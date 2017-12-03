@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <form method="POST" action="save">
+    <form method="POST" action="{{action("PapersController@save")}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
         <div class="form-group">
             <label for="categoria_id">Categoria</label>
@@ -25,6 +25,10 @@
         </div>
         <div class="form-group">
             <label for="hashtags">Hashtags</label>
+            <input type="text" class="form-control" id="hashtags" name="hashtags">
+        </div>
+        <div class="form-group">
+            <label for="hashtags">lolos</label>
             <input type="text" class="form-control" id="hashtags" name="hashtags">
         </div>
         <button type="submit" class="btn btn-default">Enviar</button>

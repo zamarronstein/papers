@@ -53,7 +53,7 @@ class CategoriaController extends Controller
             $a_result["msg"] = "Categoria guardada";
             $a_result["error"] = false;
         } catch (Exception $e) {
-
+            
         }
 
         // return json_encode($a_result);
